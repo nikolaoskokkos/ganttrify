@@ -153,7 +153,7 @@ ganttrify <- function(project,
 
   # repeat colours if not enough colours given
   if (color_categories) {
-  colour_palette <- rep(colour_palette, length(unique(project$categories)))[1:length(unique(project$categories))]}
+  colour_palette <- rep(colour_palette, length(unique(project$categories)))[1:length(unique(project$categories))]
   }
   else {
   colour_palette <- rep(colour_palette, length(unique(project$wp)))[1:length(unique(project$wp))]
