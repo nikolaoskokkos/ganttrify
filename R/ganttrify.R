@@ -138,7 +138,8 @@ ganttrify <- function(project,
                       spot_border = 0.25,
                       month_breaks = 1,
                       show_vertical_lines = TRUE,
-                      axis_text_align = "right") {
+                      axis_text_align = "right",
+                      color_categories=FALSE) {
   project <- gantt_verify(
     project = project,
     by_date = by_date,
@@ -151,7 +152,12 @@ ganttrify <- function(project,
   }
 
   # repeat colours if not enough colours given
+  if (color_categories) {
+  colour_palette <- rep(colour_palette, length(unique(project$categories)))[1:length(unique(project$categories))]}
+  }
+  else {
   colour_palette <- rep(colour_palette, length(unique(project$wp)))[1:length(unique(project$wp))]
+  }
   names(colour_palette) <- colour_palette
 
   if (is.null(line_end) == FALSE) {
